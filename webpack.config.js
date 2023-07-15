@@ -1,4 +1,5 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js", // Dẫn tới file index.js ta đã tạo
@@ -19,6 +20,9 @@ module.exports = {
       },
     ],
   },
-  // Chứa các plugins sẽ cài đặt trong tương lai
-  plugins: [],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./public/index.html",
+    }),
+  ],
 };
